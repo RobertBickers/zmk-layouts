@@ -7,6 +7,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/mouse.h>
 
 #define DEFAULT 0
 #define LOWER   1
@@ -70,14 +71,14 @@
                   label = "SYMBOL";  
 // -----------------------------------------------------------------------------------------
 // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | DEL |
-// | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
-// | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
+// | CTRL |     | M_LC| M_U | M_RC|     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
+// | SHFT |     | M_L | M_D | M_R |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
 //                    | GUI |     | ENT |   | SPC |     | ALT |
                         bindings = <
-   &kp  TAB  &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR &kp RPAR &kp DEL
-   &kp LCTRL &trans   &trans &trans   &trans   &trans      &kp MINUS &kp EQUAL &kp LBKT        &kp RBKT &kp BSLH &kp GRAVE
-   &kp LSHFT &trans   &trans &trans   &trans   &trans      &kp UNDER &kp PLUS  &kp LBRC        &kp RBRC &kp PIPE &kp TILDE
-                    	     &kp LGUI &mo TRI   &kp RET   &kp SPACE   &trans    &kp RALT
+   &kp  TAB  &kp EXCL &kp AT         &kp HASH       &kp DLLR        &kp PRCNT     &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR &kp RPAR &kp DEL
+   &kp LCTRL &trans   &mkp LCLK      &mkp MOVE_UP   &mkp RCLK       &trans        &kp MINUS &kp EQUAL &kp LBKT        &kp RBKT &kp BSLH &kp GRAVE
+   &kp LSHFT &trans   &mkp MOVE_LEFT &mkp MOVE_DOWN &mkp MOVE_RIGHT &trans        &kp UNDER &kp PLUS  &kp LBRC        &kp RBRC &kp PIPE &kp TILDE
+                    	     &kp LGUI &mo TRI    &kp RET                            &kp SPACE &trans    &kp RALT
                         >;
                 };
 
